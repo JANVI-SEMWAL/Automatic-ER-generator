@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | AI ER Converter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="shine"></div>
+  <div class="animated-background"></div>
+  <nav>
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <div class="brand-title">AI ER Converter</div>
+    </div>
+    <a class="muted-link" href="login.html">Login</a>
+  </nav>
+
+  <main class="page">
+    <section class="card auth-wrapper">
+      <header class="auth-header">
+        <div class="header-icon">⚡</div>
+        <h1>Create your account</h1>
+        <div class="auth-sub">Convert SQL ⇄ ER visually with one click</div>
+      </header>
+      <form id="registerForm" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <div class="input-wrapper">
+            <input type="text" id="username" placeholder="e.g. Jatin_914" required />
+          </div>
+          <div class="input-feedback" data-for="username"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="input-wrapper">
+            <input type="email" id="email" placeholder="name@example.com" autocomplete="email" required />
+            <span class="input-status" aria-hidden="true"></span>
+          </div>
+          <div class="input-feedback" data-for="email"></div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" placeholder="Minimum 8 characters with @ or #" autocomplete="new-password" required />
+            <span class="input-status" aria-hidden="true"></span>
+          </div>
+          <div class="input-feedback" data-for="password"></div>
+        </div>
+        <div class="field phone-field">
+          <label for="phone">Phone number</label>
+          <div class="phone-inputs">
+            <select id="countryCode" aria-label="Country code">
+              <option value="+91">India (+91)</option>
+              <option value="+1">United States (+1)</option>
+              <option value="+44">United Kingdom (+44)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+81">Japan (+81)</option>
+              <option value="+49">Germany (+49)</option>
+            </select>
+            <div class="input-wrapper">
+              <input type="tel" id="phone" placeholder="10 digit mobile" inputmode="numeric" pattern="[0-9]{10}" required />
+              <span class="input-status" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="input-feedback" data-for="phone"></div>
+        </div>
+        <div style="margin-top:18px; display:flex; gap:10px;">
+          <button type="submit" class="btn" style="flex:1;">Sign up</button>
+          <a class="btn" style="flex:1; text-decoration:none; text-align:center; background:linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #0ea5e9 100%);" href="login.html">Login</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "ai-er-converter",
+  "version": "1.0.0",
+  "description": "AI ER Converter - Convert between SQL DDL and Entity-Relationship diagrams",
+  "main": "backend/server.js",
+  "scripts": {
+    "setup": "node setup.js",
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install-deps": "cd backend && npm install"
+  },
+  "keywords": [
+    "sql",
+    "er-diagram",
+    "database",
+    "converter",
+    "ddl"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "your-repository-url"
+  }
+}

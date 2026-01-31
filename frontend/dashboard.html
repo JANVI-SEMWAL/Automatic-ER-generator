@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ER Converter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div class="shine"></div>
+  <div class="animated-background"></div>
+  <nav>
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <div class="brand-title">ER Converter</div>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span id="welcomeName" class="muted-link" style="font-weight:600;"></span>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page">
+    <section class="hero">
+      <h1>Your Database, Visualized</h1>
+      <p>Convert CREATE TABLE to clean ER diagrams, and back to SQL in seconds.</p>
+    </section>
+
+    <div class="card section" style="margin-bottom:18px;">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="sql2er">Entity Table → ER</button>
+        <button class="tab-btn" data-tab="er2sql">ER → Entity Table</button>
+        <div class="tab-slider"><span></span></div>
+      </div>
+    </div>
+
+    <section id="tab-sql2er" class="converter card section tab-pane active">
+      <h2>Entity Table → ER Diagram</h2>
+      <textarea id="sqlInput" placeholder="Enter CREATE TABLE SQL here..."></textarea>
+      <button id="convertToER">Convert to ER</button>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <h3>SQL Keyword Highlights</h3>
+          <p class="insight-sub">We scan your SQL and surface the important keywords that drive the ER model.</p>
+          <div id="sqlKeywordsList" class="keyword-list"></div>
+        </div>
+        <div class="insight-card">
+          <h3>ER Rule Reference</h3>
+          <p class="insight-sub">See how your SQL maps to Chen notation components and their drawing symbols.</p>
+          <div class="table-wrapper">
+            <table class="rules-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Symbol/Shape</th>
+                  <th>Detail &amp; Rule</th>
+                  <th>Detected In Your SQL</th>
+                </tr>
+              </thead>
+              <tbody id="erRuleRows"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="erOutput" class="output"></div>
+      <h3>Schema View (ER Diagram)</h3>
+      <div id="visualER" class="visual-output"></div>
+      <div class="download-actions" style="margin-top: 15px;">
+        <button id="downloadPDF" style="display: none;" class="btn">Download ER PDF</button>
+        <button id="downloadImage" style="display: none;" class="btn">Download ER PNG</button>
+      </div>
+      <h3 style="margin-top: 30px;">Attributes View</h3>
+      <div id="visualChen" class="visual-output"></div>
+      <div class="download-actions" style="margin-top: 15px;">
+        <button id="downloadChenPDF" style="display: none;" class="btn">Download Attributes PDF</button>
+        <button id="downloadChenPNG" style="display: none;" class="btn">Download Attributes PNG</button>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="tab-er2sql" class="converter card section tab-pane">
+      <h2>ER Diagram → Entity Table</h2>
+      <div style="margin-bottom: 15px;">
+        <label for="fileUpload" style="display: block; margin-bottom: 8px; font-weight: 500;">Or upload JSON file or image:</label>
+        <input type="file" id="fileUpload" accept=".json,.png,.jpg,.jpeg" style="margin-bottom: 10px; padding: 10px; border: 2px dashed; border-image: linear-gradient(135deg, #1e3a8a, #0ea5e9) 1; border-radius: 12px; background: rgba(15,23,42,0.6); cursor: pointer; transition: all 0.3s ease; color: #cbd5e1;">
+        <button id="clearFile" style="display: none; margin-left: 10px; padding: 8px 16px; background: linear-gradient(135deg, #dc2626, #ef4444); color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(220,38,38,0.4);">Clear File</button>
+      </div>
+      <textarea id="erInput" placeholder="Enter ER JSON or text here..."></textarea>
+      <button id="convertToSQL">Convert to SQL</button>
+      <div id="sqlOutput" class="output"></div>
+      <div class="download-actions-table" style="display: flex; gap: 12px; margin-top: 12px;"></div>
+    </section>
+  </div>
+
+  <script src="js/convert.js"></script>
+</body>
+</html>

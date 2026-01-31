@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI ER Converter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="shine"></div>
+  <div class="animated-background"></div>
+  <nav>
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <div class="brand-title">AI ER Converter</div>
+    </div>
+    <a class="muted-link" href="index.html">Register</a>
+  </nav>
+
+  <main class="page">
+    <section class="card auth-wrapper">
+      <header class="auth-header">
+        <div class="header-icon">🔑</div>
+        <h1>Welcome back</h1>
+        <div class="auth-sub">Login to access your dashboard</div>
+      </header>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <div class="input-wrapper">
+            <input type="email" id="loginEmail" placeholder="name@example.com" autocomplete="email" required />
+            <span class="input-status" aria-hidden="true"></span>
+          </div>
+          <div class="input-feedback" data-for="loginEmail"></div>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="loginPassword" placeholder="Account password" autocomplete="current-password" required />
+            <span class="input-status" aria-hidden="true"></span>
+          </div>
+          <div class="input-feedback" data-for="loginPassword"></div>
+        </div>
+        <div style="margin-top:18px; display:flex; gap:10px;">
+          <button type="submit" class="btn" style="flex:1;">Login</button>
+          <a class="btn" style="flex:1; text-decoration:none; text-align:center; background:linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #0ea5e9 100%);" href="index.html">Register</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
